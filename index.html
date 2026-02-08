@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ivan Aguilon - Thrive Technologies Assessment</title>
+  <link rel="stylesheet" href="styles.css" />
+  
+</head>
+<body>
+  <header>
+    <h1>Ivan Aguilon</h1>
+    <h2 class="subtitle">A computer engineer, and this site presents my completed assessment for the Web Development Tech Support role at Thrive Technologies.</h2>
+  </header>
+
+  <main>
+    <nav>
+      <h3>Table of Contents</h3>
+      <ul class="toc">
+        <li><a href="#answer1">1. Site Setup and Challenge</a></li>
+        <li><a href="#answer2">2. Impressions and Suggestions for Netlify</a></li>
+        <li><a href="#answer3">3. Favorite and Least Favorite Activities</a></li>
+        <li><a href="#answer4">4. Technical Documentation Choice</a></li>
+        <li><a href="#answer5">5. DNS Configuration Challenges</a></li>
+        <li><a href="#answer6">6. Troubleshooting a Build</a></li>
+        <li><a href="#answer7">7. HTTP 301 and Proxy Redirect Setup</a></li>
+        <li><a href="#answer8">8. Deploying a Function on Netlify</a></li>
+        <li><a href="#answer9">9. Security Issue Report Handling</a></li>
+      </ul>
+    </nav>
+
+    <section id="answer1">
+      <h2>1. Talk about how you made your site and why you chose the tools you did. Briefly explain one challenge you experienced in setting up this site and how you overcame it.</h2>
+      <p>I developed this site using only HTML and CSS. It is created using Visual Studio Code, version controlled using GitHub, and hosted using Netlify’s Git-based deployment. I have kept this tech stack as simple as possible so that the configurations are simple and easy to comprehend. For this type of assessment, which is basically a debug task, I have tried to keep the setup as simple as possible to mimic a typical debug scenario.</p>
+      <p>I chose to use Netlify because I really enjoy their simple process for deploying, their capability for displaying deploy logs, and their support for redirects and serverless functions, which are very popular with their users.</p>
+    </section>
+
+    <section id="answer2">
+      <h2>2. What did you think of our service during the time you used it? Provide some constructive criticism or some features that impressed you.</h2>
+      <p>Overall, my impression of using Netlify has been very positive. First of all, the deployment process with Git is extremely smooth as pushes to GitHub automatically trigger a deploy. Additionally, I appreciate the very liberal free service tier as it allows developers to experiment without incurring cost, as well as the inclusion of redirects and serverless functions to avoid the need for other services. The only areas where I think there is room for improvement are that the amount of information in the build logs is currently overwhelming for general users, and it might be helpful to tie the most likely cause of the failure or suggest next steps. A second area for improvement is DNS management, which is very powerful but initially intimidating for new users if they do not speak DNS-related terminology.</p>
+    </section>
+
+    <section id="answer3">
+      <h2>3. Rank your 5 favorite and 5 least favorite activities from this list: <a href="https://gist.github.com/laurajodz/592402a6336410377dee1a744af846ab" target="_blank" rel="noopener noreferrer">gist.github.com/laurajodz/592402a6336410377dee1a744af846ab</a></h2>
+      <h3>My 5 Favorite Activities</h3>
+      <ul>
+        <li>Debug a customer’s build using a language or framework I haven’t seen before</li>
+        <li>Dig through logs to troubleshoot unexpected site behavior</li>
+        <li>Develop a small code example to help explain a solution</li>
+        <li>Set up local copies of frameworks to reproduce issues</li>
+        <li>Work with engineers to improve a product based on customer feedback</li>
+      </ul>
+      <h3>My 5 Least Favorite Activities</h3>
+      <ul>
+        <li>Managing a support team</li>
+        <li>Explaining pricing models to prospective customers</li>
+        <li>Responding to support requests on social media</li>
+        <li>Handling a very high volume of repetitive tickets</li>
+        <li>Managing communications during major outages</li>
+      </ul>
+    </section>
+
+    <section id="answer4">
+      <h2>4. Provide a link to documentation for a technical/developer-focused product, which you think are well done, and explain why you think they are well done.</h2>
+      <p>MDN Web Docs<br />
+        <center><a href="https://developer.mozilla.org/en-US/" target="_blank" rel="noopener noreferrer">https://developer.mozilla.org/en-US/</a>
+      </center></p>
+      <p>MDN Web Docs are well-written texts because they provide explanations for basic web technologies in an easy-to-understand manner without assuming prior knowledge of advanced web technologies. The texts are written in such a way that it becomes easy for programmers to not only learn how something works but also learn why it works.</p>
+      <p>The content appears to be well-organized, easy to search, and regularly updated, which is great for troubleshooting and learning purposes. I often consider MDN my go-to resource for bug fixing and education within my capacity as a support-driven developer.</p>
+    </section>
+
+    <section id="answer5">
+      <h2>5. Explain, in a couple of paragraphs, what you think are two major challenges around DNS configuration for less-technical customers hosting websites.</h2>
+      <p>I think one of the biggest issues I face educating people on is DNS record types and propagation times. I work for Elementor Hosting, and from my previous job, I have worked with numerous customers who are unable to understand A records, CNAMEs, and TTLs. I have found people expect DNS record changes to happen instantly and often assume there is something wrong when the records do not propagate fast enough. I find I have had to explain propagation times in simple terms to some users.</p>
+      <p>Another common problem that customers experience is DNS management with various DNS service providers. In most cases, customers have bought the domain from a third-party source, but they host the site using a service such as Elementor Hosting or Netlify. This brings the problem of navigating between all the systems. In this case, customers often find it difficult to differentiate between the DNS service provider and the hosting service.</p>
+    </section>
+
+    <section id="answer6">
+      <h2>6. A customer writes in to Support saying simply that their "site won't build". You have access to their build logs, and there you see this error:Build failed due to a user error: Build script returned non-zero exit code: 2. You have no more information than this and the site's source repository is private so you cannot test the build yourself. How would you troubleshoot this issue? What steps would you take? Also, please compose your best customer-facing first response.</h2>
+      <p>My first course of action when a user complains that their site doesn’t build, and the error messages turn out to have a non-zero exit code, is to look through the entire build logs to determine where the problem starts, not the actual end message. These kinds of errors often concern issues with dependencies, configuration, environment variables, or Node versions.</p>
+      <p>Since the repository is private, I would like to check the website’s build settings and ask the customer if the build runs locally using the same command, which would have brought up the error. I would also like to check if any recent changes have been made, which would have caused such an error. In my previous role at Elementor Hosting, I have realized the importance of gathering information and helping the customers verify the issues.</p>
+
+      <strong>Customer-facing response:</strong>
+      <p>
+Hi there,
+
+Thanks for reaching out, I can understand how frustrating it is sometimes when a site isn't building. I can see that there was a failure in the deployment due to a problem during the build.
+To assist in defining this challenge more clearly, can you tell me:
+Whether the site builds locally with the same build command
+Whether there were any recent changes to dependencies or configuration
+If possible, you can share your full build logs.
+I will keep taking a look at the logs on our end, and then presumably, with a little more information, the problem will be resolved, and building will resume.
+
+Best regards,
+      </p>
+    </section>
+
+    <section id="answer7">
+      <h2>7. How would you set up an http 301 status redirect from '/netlify/anything' on your site, to https://www.google.com/search?q=anything. Please provide the redirect formatting here. Now, how about a proxy redirect? Please add that proxy redirect rule directly to your site!</h2>
+      <p><strong>Redirects Setup:</strong></p>
+      <p>To set up an HTTP 301 status redirect from /netlify/anything to Google Search, I created the following rule in my <code>_redirects</code> file:</p>
+      <p>
+301 Permanent Redirect
+/netlify/:query https://www.google.com/search?q=:query 301
+      </p>
+      <p>For a proxy redirect, I added this rule:</p>
+      <p>
+200 Proxy Redirect
+/netlify/* /index.html 200
+      </p>
+      <p>This will host the index.html content for all /netlify/* URLs, retaining the original URLs in the browsers.</p>
+    </section>
+
+    <section id="answer8">
+      <h2>8. Please attempt to deploy a function on our service. This need not be complicated. It could be 'Hello World'. Note that failure to deploy is not failing the exercise! Whether you have trouble or not, please describe what you experienced and how you attempted to troubleshoot any issues you encountered.</h2>
+      <p>I tried running a basic serverless "Hello World" function using Netlify Functions.</p>
+
+      <strong>Process:</strong>
+      <ul>
+        <li>Created a new directory named <code>netlify/functions</code> in our project.</li>
+        <li>Adding a simple JavaScript function with a plain text response.</li>
+        <li>Deployed the website using Netlify’s Git integration.</li>
+        <li>I tested my function endpoint through the browser.</li>
+      </ul>
+
+      <strong>Issue Encountered</strong>
+      <p>Initially, the function was not reflected in the Netlify dashboard, as the directory had not been correctly deployed. Upon checking the documentation to ensure that the Functions tab was being checked, the corrected directory structure was deployed, and the function worked as expected. This experience reaffirmed the importance of proper file structures and platform-specific conventions.</p>
+
+      <strong>Code:</strong>
+      <p>
+export default async function handler(req, res) {
+  return new Response("Hello World from my Netlify Function!", {
+    headers: { "Content-Type": "text/plain" },
+  });
+}
+</p>
+    </section>
+
+    <section id="answer9">
+      <h2>9. We understand you don't know anything about our internal procedures at this stage, but we want you to explain at a high level how you'd react to this situation: You receive a report of a severe security issue on www.netlify.com. You can't immediately confirm the report, so what steps might you take to investigate or substantiate the report? What might you say to the reporter, even though we haven't confirmed their assertion yet, that will instill confidence that our business is very concerned about security? You believe there is a reasonable chance the report is correct and the problem is very large and impactful. How might you escalate?</h2>
+
+      <strong>Investigation Steps:</strong>
+      <ol>
+        <li>Document everything: Write down all details provided by the reporter - URLs, steps to reproduce, possible impact, screenshots or proof-of-concept.</li>
+        <li>Verification step: A safe duplication of the bug without actual users' data, and similar reports.</li>
+        <li>Assess severity and prioritize: Using a priority system I have developed during college:
+          <ul>
+            <li>5 - Urgent: Immediate risk, critical data or system impact.</li>
+            <li>4 - Time-sensitive: High importance, should be resolved within hours.</li>
+            <li>3 - Daily workflows: Essential, part of routine processes.</li>
+            <li>2 – Follow-ups: Needs attention not immediately.</li>
+            <li>1 - Flexible: Can be addressed when convenient.</li>
+          </ul>
+          This helps to ensure that the most critical security issues are escalated first and addressed in an effective manner.
+        </li>
+      </ol>
+
+      <strong>Initial Response to Reporter:</strong>
+      <p>
+Hi there,
+
+Thanks for bringing this possible security problem to our attention here in Netlify. All security concerns are taken very seriously, and I have immediately documented your findings and brought the problem to our attention for immediate review by our security team.
+We're still looking into it; please refrain from sharing it publicly until further notice for our users' protection. If you have any additional information or a proof of concept, feel free to share it over the Netlify channel.
+Appreciate the responsible disclosure. We shall keep you informed of our findings.
+
+Best,
+      </p>
+
+      <strong>Escalation Process:</strong>
+      <ul>
+        <li>Priority Level is assigned using a unique 1 to 5 number system.</li>
+        <li>Immediately notify Tier2/Higher Department for high priority issues i.e., level 5.</li>
+        <li>Create an incident ticket with all the documented information and priority.</li>
+        <li>Loop in leadership if impact is severe or widespread.</li>
+        <li>Coordinate with engineering, law, and public relations teams as required.</li>
+        <li>Ensure that documentation is present throughout and can be used to track and resolve problems.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Ivan Aguilon - Assessment for Thrive Technologies</p>
+  </footer>
+</body>
+</html>
