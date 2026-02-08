@@ -1,2 +1,2 @@
-/netlify/:query https://www.google.com/search?q=:query 301
-/netlify/* /index.html 200!
+/netlify/:search  https://www.google.com/search?q=:search 301
+/netlify/*        /index.html  200
